@@ -2,6 +2,8 @@
 // Created on: Apr 2022
 // This file contains the JS functions for index.html
 
+'use strict'
+
 /**
  * Check service worker.
  */
@@ -12,8 +14,15 @@ if (navigator.serviceWorker) {
 }
 
 /**
- * This function displays an alert.
+ * This function calculates 
  */
-function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+function calculate() { 
+  // input
+  const radius = parseFloat(document.getElementById('radius-of-sphere').value)
+
+  // process
+  const volume = 4/3 * Math.PI * Math.pow(radius, 3)
+  
+  // output
+  document.getElementById('volume').innerHTML = 'Volume is: ' + volume.toFixed(2) + ' cm³'
 }
